@@ -2,6 +2,9 @@
   <div class="container" id="app">
     <Result :counter="counter"/>
     <Counter @updated="counter += $event" />
+    <hr>
+    <input class="form-control" type="text" v-model="name">
+    <p>{{ name }}</p>
   </div>
 </template>
 
@@ -19,7 +22,17 @@ export default {
   components: {
     Counter,
     Result
-}
+  },
+  computed: {
+    name: {
+      get() {
+        return this.$store.getters.getName;
+      },
+      set(value) {
+        this.$store.commit('changeName', value)
+      }
+    }
+  }
 }
 </script>
 
