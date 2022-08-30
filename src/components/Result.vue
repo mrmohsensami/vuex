@@ -8,17 +8,19 @@
     </h3>
   </div>
 </template>
-  
+
 <script>
+import { mapGetters } from "vuex";
 export default {
     // props: ['counter']
-    computed: {
-      counter() {
-        return this.$store.state.counter;
-      },
-      doubleCounter() {
-        return this.$store.getters.doubleCounter
-      }
+    computed: { 
+    ...mapGetters(['counter', 'doubleCounter'])
+      // counter() {
+      //   return this.$store.state.counter;
+      // },
+      // doubleCounter() {
+      //   return this.$store.getters.doubleCounter
+      // }
     }
 }
 </script>

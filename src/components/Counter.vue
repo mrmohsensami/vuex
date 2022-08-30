@@ -1,30 +1,28 @@
 <template>
     <div>
-      <a class="btn btn-success" @click="increase">Increase</a>
-      <a class="btn btn-success" @click="decrease">Decrease</a>
+        <a class="btn btn-success" @click="increment">Increase</a>
+        <a class="btn btn-success" @click="decrement">Decrease</a>
     </div>
-  </template>
+</template>
   
-  <script>
-  export default {
-      data() {
-          return {
-              
-          }
-      },
-      methods: {
-          increase() {
-            //   this.$emit('updated', +1)
-              this.$store.state.counter ++
-          },
-          decrease() {
-            //   this.$emit('updated', -1)
-              this.$store.state.counter --
-          },
-      }
-  }
-  </script>
+<script>
+import { mapActions } from "vuex";
+export default {
+    data() {},
+    methods: {
+        ...mapActions(['increment', 'decrement'])
+        // increase() {
+        // //   this.$emit('updated', +1)
+        //     this.$store.state.counter ++
+        // },
+        // decrease() {
+        // //   this.$emit('updated', -1)
+        //     this.$store.state.counter --
+        // },
+    }
+}
+</script>
   
-  <style>
+<style>
   
-  </style>
+</style>

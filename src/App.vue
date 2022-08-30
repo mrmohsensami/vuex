@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="container" id="app">
     <Result :counter="counter"/>
     <Counter @updated="counter += $event" />
   </div>
